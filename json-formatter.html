@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/json-formatter.css">
+    <meta name="title" content="JSON Formatter">
+<meta name="description" content="Online JSON Formatter">
+<meta name="keywords" content="json-formatter, json, formatter, converter, tool">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="revisit-after" content="1 days">
+<meta name="author" content="Ondrej Pacovsky">
+
+<meta property="og:title" content="JSON Formatter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.ondra907.com/tools/json-formatter" />
+<meta property="og:image" content="https://www.ondra907.com/tools/assets/json-formatter-icon.png" />
+<meta property="og:description" content="Online JSON Formatter" />
+<meta name="theme-color" content="#880ED4">
+
+<body>
+    <div class="container">
+        <div class="input-container">
+          <h3>Unformatted JSON:</h3>
+          <textarea class="json-input"></textarea>
+          <div class="btns">
+            <button class="formatBtn" onclick="format()">Format</button>
+            <button class="githubBtn">
+              <i class="fa fa-github"></i>
+              GitHub
+            </button>
+          </div>
+        </div>
+        <div class="output-container">
+          <h3>Formatted JSON:</h3>
+          <textarea class="json-output"></textarea>
+        </div>
+      </div>
+    
+      <script>
+        function format() {
+    const jsonInput = document.querySelector('.json-input').value;
+    const jsonOutput = document.querySelector('.json-output');
+
+    try {
+        const parsedJson = JSON.parse(jsonInput);
+        jsonOutput.textContent = JSON.stringify(parsedJson, null, 2);
+    } catch (error) {
+        jsonOutput.textContent = 'Error with parsing: ' + error;
+    }
+}
+      </script>
+</body>
+</html>
