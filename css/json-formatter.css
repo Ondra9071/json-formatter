@@ -121,3 +121,8 @@ h3 {
     box-shadow: 0 0 rgb(27, 27, 27);
     top: 5px;
 }
+.githubBtn i {
+    font-size: 16px;
+    transform: scale(1.2);
+    margin-right: 5px;
+    }
